@@ -6,7 +6,8 @@ import tkinter.messagebox as msgbox # 메세지박스를 msgbox라는 이름으�
 from tkinter import * #tkinter밑에있는 모든 정보 가져옴
 import ledger_bk #ledger_bk 정보 가져옴
 import datetime # datetime 정보 가져옴
-import random # random 정보 가져옴
+import secrets
+
 window = Tk() #윈도우 창 생성
 window.title("계좌 관리 프로그램") #윈도우 창 타이틀
 
@@ -15,7 +16,7 @@ def rand_accnum() : # 랜덤한 계좌번호를 문자열로 생성해서 리턴
     acc_num = ""
 
     for i in range(16) :
-        accnum_list.append(random.randint(0, 9))#0부터 9사이로 된 숫자가 랜덤으로 입력 
+        accnum_list.append(secrets.SystemRandom().randint(0, 9))#0부터 9사이로 된 숫자가 랜덤으로 입력 
     accnum_list[6] = '-'#7번째 자리에 '-'입력
     accnum_list[9] = '-'#10번째 자리에 '-'입력
 
